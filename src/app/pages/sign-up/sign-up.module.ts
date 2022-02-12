@@ -6,6 +6,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
+import { SignUpRoutingModule } from './sign-up-routing.module';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import {MatRadioModule} from '@angular/material/radio';
     ReactiveFormsModule,
     MatInputModule,
     MatButtonModule,
-    MatRadioModule
+    MatRadioModule,
+    SignUpRoutingModule
   ]
 })
 export class SignUpModule { }

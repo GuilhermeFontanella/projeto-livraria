@@ -1,0 +1,28 @@
+.menu {
+    background-color: rgb(105, 105, 105);
+    height: 5rem;
+    box-shadow: 0px 0px 5px black;
+}
+
+.container  {
+    padding: 0px;
+    margin: auto;
+    margin-top: -4.3rem;
+}
+
+.menu-buttons {
+    justify-content: space-around;
+    align-items: center;
+    height: 5rem;
+    text-align: center;
+}
+
+button {
+    color: azure;
+    font-size: 18px;
+}
+
+button:hover {
+    background-color: rgb(75, 75, 75);
+    color: rgb(255, 88, 121);
+}

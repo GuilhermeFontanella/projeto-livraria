@@ -1,7 +1,5 @@
 
 import { RouterModule } from '@angular/router';
-import { LoginModule } from './pages/login/login.module';
-import { MenuModule } from './menu/menu.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -11,7 +9,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { PagesModule } from './pages/pages.module';
-import { SignUpModule } from './pages/sign-up/sign-up.module';
+import { CommonModule } from '@angular/common';
+import { NgChartsModule } from 'ng2-charts';
 
 
 @NgModule({
@@ -19,6 +18,7 @@ import { SignUpModule } from './pages/sign-up/sign-up.module';
     AppComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -26,7 +26,7 @@ import { SignUpModule } from './pages/sign-up/sign-up.module';
     PagesModule,
     NgbModule,
     RouterModule,
-    SignUpModule
+    NgChartsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

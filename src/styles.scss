@@ -12,3 +12,11 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     font-size: 10px;
     content: "Campo obrigatório";
 }
+
+.background {
+    background: url('./assets/images/backgrounds/background-login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
