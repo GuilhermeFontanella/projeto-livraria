@@ -1,0 +1,47 @@
+.background {
+    background: url('../../../assets/images/backgrounds/background-login.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100vw;
+}
+
+.card-login {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+label {
+    margin-bottom: 20px;
+}
+
+mat-card {
+    max-width: 40%;
+    width: 100%;
+    margin: auto;
+}
+
+mat-card .input {
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card .input-button {
+    text-align: center;
+}
+
+mat-form-field {
+    margin-top: 10px;
+}
+
+#botao-cadastro {
+    font-size: 0.8rem;
+    color: grey;
+}
+
+#botao-cadastro:hover {
+    color: rgb(216, 216, 216);
+}
+

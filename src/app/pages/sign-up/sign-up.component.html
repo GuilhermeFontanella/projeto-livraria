@@ -1,0 +1,47 @@
+<div>
+    <div class="background">
+        <div class="card-login">
+            <mat-card [class.mat-elevation-z8]="true">
+                <label class="h3">Cadastro</label>
+                <form [formGroup]="form" (submit)="login()">
+                    <div class="input">
+                        <mat-form-field appearance="fill">
+                            <mat-label>Nome</mat-label>
+                            <input type="text" matInput formControlName="name">
+                            <mat-error class="campo-obrigatorio" *ngIf="form.get('name')?.touched && form.get('name')?.invalid"></mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Sobrenome</mat-label>
+                            <input type="text" matInput formControlName="lastName" >
+                            <mat-error class="campo-obrigatorio" *ngIf="form.get('lastName')?.touched && form.get('lastName')?.invalid"></mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>E-mail</mat-label>
+                            <input type="email" matInput formControlName="user" placeholder="yourEmail@email.com">
+                            <mat-error *ngIf="form.get('user')?.touched && form.get('user')?.invalid">E-mail inválido</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Senha</mat-label>
+                            <input type="password" matInput formControlName="password" placeholder="" maxlength="20">
+                            <mat-error class="campo-obrigatorio" *ngIf="form.get('password')?.touched && form.get('password')?.invalid"></mat-error>
+                        </mat-form-field>
+                        <div style="display: flex; flex-direction: column; margin-bottom: 10px; margin-left: 10px; margin-top: 10px;">
+                            <mat-label style="margin-bottom: 5px; color: rgb(206, 206, 206);">Nível da hierarquia *</mat-label>
+                            <mat-radio-group required="true">
+                                <mat-radio-button style="margin-right: 15px;" value="1" (change)="form.get('level')?.setValue($event.value)">Gerente</mat-radio-button>
+                                <mat-radio-button value="2" (change)="form.get('level')?.setValue($event.value)">Assistente</mat-radio-button>
+                            </mat-radio-group>
+                            <mat-error class="campo-obrigatorio" *ngIf="form.get('level')?.touched && form.get('level')?.invalid"></mat-error>
+                        </div>
+                        
+                    </div>
+                    <div class="input-button">
+                        <button type="submit" mat-raised-button color="primary">Cadastrar</button>
+                    </div>
+                </form>
+                <button id="botao-cadastro" mat-button (click)="navigate()">Já tem  cadastro? Faça o login!</button>
+            </mat-card>
+        </div>
+    </div>
+</div>
+
