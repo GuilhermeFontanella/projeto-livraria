@@ -1,3 +1,4 @@
+import { FooterModule } from './../../components/footer/footer.module';
 import { IndicatorsModule } from './../../components/indicators/indicators.module';
 import { ChartModule } from './../../components/chart/chart.module';
 import { MatCardModule } from '@angular/material/card';
@@ -8,6 +9,7 @@ import { HomeRoutingModule } from './home-routing.module';
 import { MenuModule } from 'src/app/components/menu/menu.module';
 import {MatDividerModule} from '@angular/material/divider';
 import { TableModule } from 'src/app/components/table/table.module';
+import { MovimentationModule } from '../movimentation/movimentation.module';
 
 
 @NgModule({
@@ -17,11 +19,13 @@ import { TableModule } from 'src/app/components/table/table.module';
     CommonModule,
     HomeRoutingModule,
     MenuModule,
-    MatCardModule,
-    ChartModule,
-    MatDividerModule,
-    IndicatorsModule,
-    TableModule
+    // MatCardModule,
+    // ChartModule,
+    // MatDividerModule,
+    // IndicatorsModule,
+    // TableModule,
+    FooterModule,
+    MovimentationModule
   ]
 })
 export class HomeModule { }

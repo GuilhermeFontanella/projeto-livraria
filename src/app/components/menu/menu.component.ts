@@ -9,15 +9,20 @@ import { Component, OnInit } from '@angular/core';
 export class MenuComponent implements OnInit {
 
   constructor(
-    private router: Router
+    private router: Router,
+  
   ) { }
 
   ngOnInit(): void {
+    console.log(this.router.url)
   }
 
   logout() {
-    console.log("saiu");
     this.router.navigateByUrl('/login')
+  }
+
+  navigate(adress: string) {
+    this.router.navigateByUrl(`/${adress}`);
   }
 
 }

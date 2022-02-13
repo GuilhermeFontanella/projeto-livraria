@@ -10,6 +10,10 @@ const routes: Routes = [
   },
   { path: 'home', 
     loadChildren:() => import('./pages/home/home.module').then((m) => m.HomeModule)
+  },
+  { path: '', pathMatch: 'full', redirectTo: 'movimentation' },
+  { path: 'movimentation',
+    loadChildren:() => import('./pages/movimentation/movimentation.module').then((m) => m.MovimentationModule)
   }
 ];
 

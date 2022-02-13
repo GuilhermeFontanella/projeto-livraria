@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  @Output() emitEventLogin = new EventEmitter();
   form!: FormGroup;
 
   constructor(
@@ -27,7 +28,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    console.log(this.form.value)
+    this.emitEventLogin.emit("Qualquer coisa")
     this.router.navigate(['/home']);
   }
 

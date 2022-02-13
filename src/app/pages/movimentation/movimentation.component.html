@@ -1,0 +1,33 @@
+<app-menu selected="movimentation"></app-menu>
+<div class="home container">
+    <div class="dashboard row">
+        <div class="col-12">
+            <div class="title">
+               <span class="h1" >Movimentação</span> 
+            </div>
+            <div>
+                <mat-card>
+                    <span>Número de livros locados</span>
+                    <app-chart></app-chart>
+                </mat-card>
+            </div>
+        </div>
+        <div style="display: flex; margin-bottom:5rem;">
+            <div class="indicators col-6">
+                <div class="title" style="margin-top: 50px;">
+                    <span class="h1" >Indicadores</span> 
+                 </div>
+                <mat-card>
+                    <span>Indicadores gerais</span>
+                    <app-indicators></app-indicators>
+                </mat-card>
+            </div>
+            <div class="col-6" style="margin-top: 6.7rem;">
+                <mat-card>
+                    <app-table></app-table>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>

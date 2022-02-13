@@ -1,20 +1,11 @@
-.menu {
-    background-color: rgb(105, 105, 105);
-    height: 5rem;
-    box-shadow: 0px 0px 5px black;
-}
-
-.container  {
-    padding: 0px;
-    margin: auto;
-    margin-top: -4.3rem;
-}
-
 .menu-buttons {
+    display: flex;
     justify-content: space-around;
     align-items: center;
     height: 5rem;
     text-align: center;
+    margin: auto;
+    width: 100%;
 }
 
 button {

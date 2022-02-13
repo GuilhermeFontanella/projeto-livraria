@@ -1,25 +1,25 @@
-<div class="menu">
-    
-    <img style="margin: 10px 0px 0px 20px; width: 60px; height: 60px;"src="../../assets/icons/livro.svg">
-    
-    <div class="container">
-        <div class="row menu-buttons">
-            <div class="col-lg-2 col-md-2 col-sm-12">
-                <button mat-button>Inventário</button>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-12">
-                <button mat-button>Movimentação</button>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-12">
-                <button mat-button>Registrar movimento</button>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-12">
-                <button mat-button>Cadastrar Livros</button>
-            </div>
-            <div class="col-lg-2 col-md-2 col-sm-12">
-                <button mat-button (click)="logout()">Sair</button>
+
+    <mat-toolbar style="padding-bottom: 10px;">
+        <img style="margin: 10px 0px 0px 20px; width: 80px; height: 80px; background-color: rgb(255, 255, 255); border-radius: 50%;"src="../../assets/icons/livro.svg">
+        <div class="container">
+            <div class="row align-items-center justify-content-center" style="padding-top: 5px;">
+                <div class="col-2 col-md-2 col-sm-12">
+                    <button mat-button (click)="navigate('inventary')">Inventário</button>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12">
+                    <button mat-button (click)="navigate('movimentation')">Movimentação</button>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12">
+                    <button mat-button (click)="navigate('register-movement')">Registrar movimento</button>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12">
+                    <button mat-button (click)="navigate('register-books')">Cadastrar Livros</button>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-12">
+                    <button mat-button (click)="logout()">Sair</button>
+                </div>
             </div>
         </div>
-    </div>
-</div>
+    </mat-toolbar>
+
 

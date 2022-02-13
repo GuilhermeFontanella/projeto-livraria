@@ -1,3 +1,5 @@
+import { FooterModule } from './components/footer/footer.module';
+import { MenuModule } from './components/menu/menu.module';
 
 import { RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
@@ -27,6 +29,8 @@ import { NgChartsModule } from 'ng2-charts';
     NgbModule,
     RouterModule,
     NgChartsModule,
+    MenuModule,
+    FooterModule
   ],
   providers: [],
   bootstrap: [AppComponent]
