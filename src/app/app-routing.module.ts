@@ -17,6 +17,9 @@ const routes: Routes = [
   },
   { path: 'register-movement',
     loadChildren:() => import('./pages/register-movement/register-movement.module').then((m) => m.RegisterMovementModule)
+  },
+  { path: 'register-books',
+    loadChildren:() => import('./pages/register-new-book/register-new-book.module').then((m) => m.RegisterNewBookModule)
   }
 ];
 

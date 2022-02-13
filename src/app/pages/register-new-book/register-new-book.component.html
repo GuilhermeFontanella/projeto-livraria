@@ -1,0 +1,115 @@
+<app-menu selected="movimentation"></app-menu>
+<div class="container">
+    <div class="dashboard row">
+        <div class="col-12">
+            <div class="title">
+               <span class="h1">
+                   Cadastrar novo Livro
+                </span> 
+            </div>
+            <div>
+                <mat-card style="padding-top: 30px;">
+                    <form 
+                    [formGroup]="form" 
+                    (submit)="registrar()">                      
+                        <mat-form-field appearance="fill" class="col-6">
+                            <mat-label>
+                                Nome da obra:
+                            </mat-label>
+                            <input 
+                            matInput 
+                            formControlName="bookName" 
+                            type="text" 
+                            minlength="3" 
+                            maxlength="50">
+                            <mat-error *ngIf="form.get('bookName')?.touched && form.get('bookName')?.invalid">Campo obrigatório</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col-6">
+                            <mat-label>
+                                Autor:
+                            </mat-label>
+                            <input 
+                            matInput 
+                            formControlName="author" 
+                            type="text" 
+                            minlength="3" 
+                            maxlength="50">
+                            <mat-error *ngIf="form.get('author')?.touched && form.get('author')?.invalid">Campo obrigatório</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col-6">
+                            <mat-label>
+                                Gênero:
+                            </mat-label>
+                            <mat-select 
+                            name="gender" 
+                            (selectionChange)="form.get('gender')?.setValue($event.value)" 
+                            required="true">
+                                <mat-option 
+                                *ngFor="let gender of genders" 
+                                [value]="gender.value">
+                                  {{gender.label}}
+                                </mat-option>
+                            </mat-select>
+                            <mat-error *ngIf="form.get('gender')?.touched && form.get('gender')?.invalid">
+                                Campo obrigatório
+                            </mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col-6">
+                            <mat-label>
+                                Editora:
+                            </mat-label>
+                            <input 
+                            matInput 
+                            formControlName="publishingCompany" 
+                            type="text" 
+                            minlength="3" 
+                            maxlength="50">
+                            <mat-error *ngIf="form.get('publishingCompany')?.touched && form.get('publishingCompany')?.invalid">Campo obrigatório</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col-6">
+                            <mat-label>
+                                Edição:
+                            </mat-label>
+                            <input 
+                            matInput  
+                            formControlName="edition" 
+                            type="number" 
+                            min="1" 
+                            max="1000">
+                            <mat-error *ngIf="!form.get('edition')?.value">
+                                Campo obrigatório
+                            </mat-error>
+                            <mat-error *ngIf="form.get('edition')?.value <= 0 && form.get('edition')?.value">O valor deve ser  maior do que 0 (zero)</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col-6">
+                            <mat-label>
+                                Quantidade em estoque:
+                            </mat-label>
+                            <input 
+                            matInput  
+                            formControlName="amount" 
+                            type="number" 
+                            min="1">
+                            <mat-error *ngIf="!form.get('amount')?.value">
+                                Campo obrigatório
+                            </mat-error>
+                            <mat-error *ngIf="form.get('amount')?.value <= 0 && form.get('amount')?.value">
+                                O valor deve ser  maior do que 0 (zero)
+                            </mat-error>
+                        </mat-form-field>
+                        <button 
+                        mat-raised-button 
+                        color="primary" 
+                        style="margin-left: 15px;" 
+                        [disabled]="form.invalid">
+                            Cadastrar
+                        </button>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+
+
