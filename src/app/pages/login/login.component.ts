@@ -29,7 +29,7 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.emitEventLogin.emit("Qualquer coisa")
-    this.router.navigate(['/home']);
+    this.router.navigate(['/']);
   }
 
   navigate() {
