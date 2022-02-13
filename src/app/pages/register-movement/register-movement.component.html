@@ -36,7 +36,7 @@
                             <input matInput mask="(00) 9999-99999" formControlName="telephone" placeholder="(XX) 9 12345-1234">
                             <mat-error *ngIf="form.get('telephone')?.touched && form.get('telephone')?.invalid">Campo obrigatório</mat-error>
                         </mat-form-field>
-                        <button mat-raised-button color="primary" style="margin-left: 15px;" [disabled]="!form.valid">Registrar</button>
+                        <button mat-raised-button color="primary" style="margin-left: 15px;" [disabled]="isDisabled">Registrar</button>
                     </form>
                 </mat-card>
             </div>

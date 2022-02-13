@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterMovementComponent implements OnInit {
   form!: FormGroup;
+  isDisabled: boolean = true;
 
   minDate!: Date;
   maxDate!: Date;
@@ -17,9 +18,6 @@ export class RegisterMovementComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder
   ) {
-    const currentYear = new Date().getFullYear();
-    this.minDate = new Date(currentYear - 20, 0, 1);
-    this.maxDate = new Date(currentYear + 1, 11, 31);
   }
 
   ngOnInit(): void {
@@ -31,10 +29,21 @@ export class RegisterMovementComponent implements OnInit {
       movement:[, Validators.required],
       idBook: [null, Validators.required],
       date: [this.currentDate],
-      deadline: [, Validators.required],
+      deadline: [],
       nameWhoTookBook: [, Validators.required],
       telephone: [, Validators.required]
-    })    
+    })
+    
+    this.form.valueChanges.subscribe(() => {
+      this.isDisabled = true;
+      if(this.form.get('movement')?.value === '1' && this.form.get('deadline')?.value) {
+        console.log("Entrou no if");
+        this.isDisabled = false;
+      }
+      if(this.form.get('movement')?.value === '2' && this.form.valid) {
+        this.isDisabled = false;
+      }
+    })
   }
 
   registrar() {
