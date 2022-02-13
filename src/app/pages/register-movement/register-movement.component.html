@@ -1,0 +1,47 @@
+<app-menu selected="movimentation"></app-menu>
+<div class="container">
+    <div class="dashboard row">
+        <div class="col-12">
+            <div class="title">
+               <span class="h1">Registrar entrada/saída</span> 
+            </div>
+            <div>
+                <mat-card>
+                    <form [formGroup]="form" (submit)="registrar()">
+                        <mat-radio-group style="display: flex; flex-direction: row; padding-left: 15px; padding-top: 15px; padding-bottom: 15px;" formControlName="movement">
+                            <mat-radio-button value="1" style="margin-right: 10px;" (click)="form.get('deadline')?.setValue(null)">Entrada</mat-radio-button>
+                            <mat-radio-button value="2" (click)="form.get('deadline')?.setValue('devolução')">Saída</mat-radio-button>
+                        </mat-radio-group>                        
+                        <mat-form-field appearance="fill" class="col-12">
+                            <mat-label>Id do livro:</mat-label>
+                            <input matInput formControlName="idBook" type="number">
+                            <mat-error *ngIf="form.get('idBook')?.touched && form.get('idBook')?.invalid">Campo obrigatório</mat-error>
+                        </mat-form-field>
+                        <div class="col-12" style="margin-bottom: 20px;">
+                            <mat-label>Data: </mat-label>
+                            <span type="text" >{{form.get('date')?.value}}</span>
+                        </div>
+                        <mat-form-field appearance="fill" class="col-12" *ngIf="form.get('movement')?.value === '1'">
+                            <mat-label>Prazo de entrega:</mat-label>
+                            <input matInput formControlName="deadline" type="date">
+                            <mat-error *ngIf="form.get('deadline')?.touched && form.get('deadline')?.invalid" required>Campo obrigatório</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col-12">
+                            <mat-label>Nome do locatário:</mat-label>
+                            <input matInput formControlName="nameWhoTookBook" type="text">
+                            <mat-error *ngIf="form.get('nameWhoTookBook')?.touched && form.get('nameWhoTookBook')?.invalid">Campo obrigatório</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill" class="col-12">
+                            <mat-label>Telefone:</mat-label>
+                            <input matInput mask="(00) 9999-99999" formControlName="telephone" placeholder="(XX) 9 12345-1234">
+                            <mat-error *ngIf="form.get('telephone')?.touched && form.get('telephone')?.invalid">Campo obrigatório</mat-error>
+                        </mat-form-field>
+                        <button mat-raised-button color="primary" style="margin-left: 15px;" [disabled]="!form.valid">Registrar</button>
+                    </form>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>
+<app-footer></app-footer>
+

@@ -14,6 +14,9 @@ const routes: Routes = [
   },
   { path: 'inventary',
     loadChildren:() => import('./pages/inventary/inventary.module').then((m) => m.InventaryModule)
+  },
+  { path: 'register-movement',
+    loadChildren:() => import('./pages/register-movement/register-movement.module').then((m) => m.RegisterMovementModule)
   }
 ];
 

@@ -1,0 +1,25 @@
+.dashboard {
+    max-width: 70%;
+    width: 100%;
+    height: 100vh;
+    margin: auto;
+    margin-top: 30px;
+    justify-content:flex-start;
+    display: flex;
+    flex-direction: column;
+}
+
+mat-card {  
+    margin: auto;
+}
+
+.title {
+    margin-bottom: 10px;
+}
+
+mat-form-field {
+    margin-bottom: 20px;
+}
+
+
+
