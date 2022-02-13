@@ -3,27 +3,28 @@
         <div class="card-login">
             <mat-card [class.mat-elevation-z8]="true">
                 <label class="h3">Cadastro</label>
-                <form [formGroup]="form" (submit)="login()">
+                <form [formGroup]="form" (submit)="signUp()">
                     <div class="input">
                         <mat-form-field appearance="fill">
                             <mat-label>Nome</mat-label>
-                            <input type="text" matInput formControlName="name">
+                            <input type="text" matInput formControlName="name" minlength="3" maxlength="50">
                             <mat-error class="campo-obrigatorio" *ngIf="form.get('name')?.touched && form.get('name')?.invalid"></mat-error>
                         </mat-form-field>
                         <mat-form-field appearance="fill">
                             <mat-label>Sobrenome</mat-label>
-                            <input type="text" matInput formControlName="lastName" >
+                            <input type="text" matInput formControlName="lastName" minlength="3" maxlength="100">
                             <mat-error class="campo-obrigatorio" *ngIf="form.get('lastName')?.touched && form.get('lastName')?.invalid"></mat-error>
                         </mat-form-field>
                         <mat-form-field appearance="fill">
                             <mat-label>E-mail</mat-label>
-                            <input type="email" matInput formControlName="user" placeholder="yourEmail@email.com">
+                            <input type="email" matInput formControlName="user" placeholder="yourEmail@email.com" maxlength="100">
                             <mat-error *ngIf="form.get('user')?.touched && form.get('user')?.invalid">E-mail inválido</mat-error>
                         </mat-form-field>
                         <mat-form-field appearance="fill">
                             <mat-label>Senha</mat-label>
-                            <input type="password" matInput formControlName="password" placeholder="" maxlength="20">
-                            <mat-error class="campo-obrigatorio" *ngIf="form.get('password')?.touched && form.get('password')?.invalid"></mat-error>
+                            <input type="password" matInput formControlName="password" minlength="6" maxlength="20">
+                            <mat-error class="campo-obrigatorio" *ngIf="form.get('password')?.touched && !form.get('password')?.value"></mat-error>
+                            <mat-error *ngIf="form.get('password')?.value && form.get('password')?.invalid">A senha deve ter no mínimo 6 ou no máximo 20 caracteres</mat-error>
                         </mat-form-field>
                         <div style="display: flex; flex-direction: column; margin-bottom: 10px; margin-left: 10px; margin-top: 10px;">
                             <mat-label style="margin-bottom: 5px; color: rgb(206, 206, 206);">Nível da hierarquia *</mat-label>
@@ -36,7 +37,7 @@
                         
                     </div>
                     <div class="input-button">
-                        <button type="submit" mat-raised-button color="primary">Cadastrar</button>
+                        <button type="submit" mat-raised-button color="primary" [disabled]="!form.valid">Cadastrar</button>
                     </div>
                 </form>
                 <button id="botao-cadastro" mat-button (click)="navigate()">Já tem  cadastro? Faça o login!</button>

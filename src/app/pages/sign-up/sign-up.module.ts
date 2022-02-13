@@ -7,6 +7,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
 import {MatRadioModule} from '@angular/material/radio';
 import { SignUpRoutingModule } from './sign-up-routing.module';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SignUpRoutingModule } from './sign-up-routing.module';
     MatInputModule,
     MatButtonModule,
     MatRadioModule,
-    SignUpRoutingModule
+    SignUpRoutingModule,
+    MatSnackBarModule
   ]
 })
 export class SignUpModule { }

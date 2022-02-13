@@ -1,3 +1,4 @@
+import { SignUpService } from './sign-up.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -12,7 +13,8 @@ export class SignUpComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private signUpService: SignUpService
   ) { }
 
   ngOnInit(): void {
@@ -31,14 +33,14 @@ export class SignUpComponent implements OnInit {
     //this.formValidator();
   }
 
-  login() {
-    if(!this.form.valid) {
-      this.form.markAllAsTouched(); 
-    } 
-    
-    console.log(this.form.value)
-    //this.router.navigate(['/home']);
-    
+  signUp() {
+    const newUser = this.form.value;
+    this.signUpService.signUp(newUser).subscribe(() => {
+      this.signUpService.showMessage('Usuário cadastrado com sucesso!')
+      this.router.navigateByUrl('/login');
+    }, (error) => {
+      this.signUpService.showMessage('Ocorreu um erro ao cadastrar o usuário.');
+    })
   }
 
   navigate() {
