@@ -17,7 +17,7 @@
                         </mat-form-field>
                     </div>
                     <div class="input-button">
-                        <button type="submit" mat-raised-button color="primary">Login</button>
+                        <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Login</button>
                     </div>
                 </form>
                 <button id="botao-cadastro" mat-button (click)="navigate()">Não tem cadastro? Cadastre-se!</button>

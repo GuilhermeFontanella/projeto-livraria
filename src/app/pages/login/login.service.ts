@@ -1,18 +1,17 @@
 import { Observable } from 'rxjs';
-import { environment } from 'src/environments/environment';
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
+import { Injectable } from '@angular/core';
 import { User } from 'src/app/models/user.model';
 
 @Injectable({
   providedIn: 'root'
 })
-export class SignUpService {
+export class LoginService {
 
-  url = environment.baseUrl + environment.urlModuloUsuarios
-
+  url = environment.baseUrl + environment.urlModuloUsuarios;
+  
   constructor(
     private http: HttpClient,
     private snackBar: MatSnackBar
@@ -26,7 +25,7 @@ export class SignUpService {
     })
   }
 
-  signUp(user: User):  Observable<User> {
-    return this.http.post<User>(`${this.url}`, user);
+  getUser(user: string, password: string): Observable<User> {
+    return this.http.get<User>(`${this.url}?user=${user}&password=${password}`);
   }
 }

@@ -18,7 +18,8 @@ export class MenuComponent implements OnInit {
   }
 
   logout() {
-    this.router.navigateByUrl('/login')
+    this.router.navigateByUrl('/login');
+    localStorage.clear();
   }
 
   navigate(adress: string) {

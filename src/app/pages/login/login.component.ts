@@ -1,6 +1,10 @@
+import { LoginService } from './login.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { User } from 'src/app/models/user.model';
+import { from } from 'rxjs';
+import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +17,8 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private loginService: LoginService
   ) { }
 
   ngOnInit(): void {
@@ -28,8 +33,25 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
-    this.emitEventLogin.emit("Qualquer coisa")
-    this.router.navigate(['/']);
+    const userEmail = this.form.get('user')?.value;
+    const userPassword = this.form.get('password')?.value;
+    let user: any;
+
+    if(this.form.valid) {
+      this.loginService.getUser(userEmail, userPassword).subscribe((resp: any) => {
+        user = resp;
+  
+        if(user.length) {
+          localStorage.setItem('user', user[0].name);
+          localStorage.setItem('email', user[0].user);
+          localStorage.setItem('level', user[0].level);
+          this.router.navigateByUrl('/')
+          // *** SIMULANDO O ERRO NA RESPOSTA DO BACK-END
+        } else {
+          this.loginService.showMessage('Usuário não encontrado!')
+        }
+      });
+    }
   }
 
   navigate() {
