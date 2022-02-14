@@ -1,7 +1,7 @@
 
 import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
-import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
+import { ChartConfiguration, ChartData, ChartType } from 'chart.js';
 
 @Component({
   selector: 'app-chart',
@@ -43,50 +43,71 @@ export class ChartComponent implements OnInit {
           { data: [], label: 'Locações' },
         ]
       }; 
-      let contador = 0;
+
+      let contadorJan = 0;
+      let contadorFev = 0;
+      let contadorMar = 0;
+      let contadorAbr = 0;
+      let contadorMai = 0;
+      let contadorJun = 0;
+      let contadorJul = 0;
+      let contadorAgo = 0;
+      let contadorSet = 0;
+      let contadorOut = 0;
+      let contadorNov = 0;
+      let contadorDez = 0;
       for (let item of this.data) {
         if(item.date.includes('/01/')) {
-          contador++;
-          this.barChartData.datasets[0].data[0] = contador;
+          contadorJan++;
+          this.barChartData.datasets[0].data[0] = contadorJan;
         }
-        // if(item.date.includes('/02/')) {
-        //   contador++
-        //   this.barChartData.datasets[0].data[1] = contador;
-        // }
-        // if(item.date.includes('/03/')) {
-        //   contador++
-        //   this.barChartData.datasets[0].data[2] = contador;
-        // }
-        // if(item.date.includes('/04/')) {
-        //   contador++
-        //   this.barChartData.datasets[0].data[3] = contador;
-        // }
-        // if(item.date.includes('/05/')) {
-        //   this.barChartData.datasets[0].data[4] = this.data.length;
-        // }
-        // if(item.date.includes('/06/')) {
-        //   this.barChartData.datasets[0].data[5] = this.data.length;
-        // }
-        // if(item.date.includes('/07/')) {
-        //   this.barChartData.datasets[0].data[6] = this.data.length;
-        // }
-        // if(item.date.includes('/08/')) {
-        //   this.barChartData.datasets[0].data[7] = this.data.length;
-        // }
-        // if(item.date.includes('/09/')) {
-        //   this.barChartData.datasets[0].data[8] = this.data.length;
-        // }
-        // if(item.date.includes('/10/')) {
-        //   this.barChartData.datasets[0].data[9] = this.data.length;
-        // }
-        // if(item.date.includes('/11/')) {
-        //   this.barChartData.datasets[0].data[10] = this.data.length;
-        // }
-        // if(item.date.includes('/12/')) {
-        //   this.barChartData.datasets[0].data[11] = this.data.length;
-        // }
+        if(item.date.includes('/02/')) {
+          contadorFev++;
+          this.barChartData.datasets[0].data[1] = contadorFev;
+        }
+        if(item.date.includes('/03/')) {
+          contadorMar++;
+          this.barChartData.datasets[0].data[2] = contadorMar;
+        }
+        if(item.date.includes('/04/')) {
+          contadorAbr++;
+          this.barChartData.datasets[0].data[3] = contadorAbr;
+        }
+        if(item.date.includes('/05/')) {
+          contadorMai++;
+          this.barChartData.datasets[0].data[4] = contadorMai;
+        }
+        if(item.date.includes('/06/')) {
+          contadorJun++;
+          this.barChartData.datasets[0].data[5] = contadorJun;
+        }
+        if(item.date.includes('/07/')) {
+          contadorJul++;
+          this.barChartData.datasets[0].data[6] = contadorJul;
+        }
+        if(item.date.includes('/08/')) {
+          contadorAgo++;
+          this.barChartData.datasets[0].data[7] = contadorAgo;
+        }
+        if(item.date.includes('/09/')) {
+          contadorSet++;
+          this.barChartData.datasets[0].data[8] = contadorSet;
+        }
+        if(item.date.includes('/10/')) {
+          contadorOut++;
+          this.barChartData.datasets[0].data[9] = contadorOut;
+        }
+        if(item.date.includes('/11/')) {
+          contadorNov++;
+          this.barChartData.datasets[0].data[10] = contadorNov;
+        }
+        if(item.date.includes('/12/')) {
+          contadorDez++;
+          this.barChartData.datasets[0].data[11] = contadorDez;
+        }
       }
-
   }
+
+
 
 }
