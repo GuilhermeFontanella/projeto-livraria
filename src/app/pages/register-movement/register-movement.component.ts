@@ -74,7 +74,7 @@ export class RegisterMovementComponent implements OnInit {
       book = resp;
       this.registerMovementService.getRepeatedBooks(book.bookName).subscribe((resp: any) => {
         repeatedBooks = resp; 
-        this.registerMovementService.deleteBookWithId(id).subscribe();
+        //this.registerMovementService.deleteBookWithId(id).subscribe();
         setTimeout(() => {
           window.location.reload();
         }, 1000)

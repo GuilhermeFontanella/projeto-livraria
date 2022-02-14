@@ -1,5 +1,5 @@
 
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild, Input } from '@angular/core';
 import { BaseChartDirective } from 'ng2-charts';
 import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 
@@ -11,6 +11,7 @@ import { ChartConfiguration, ChartData, ChartEvent, ChartType } from 'chart.js';
 export class ChartComponent implements OnInit {
 
   @ViewChild(BaseChartDirective) chart: BaseChartDirective | undefined;
+  @Input() data: any[] = []; 
 
   public barChartOptions: ChartConfiguration['options']= {
     responsive: true,
@@ -18,7 +19,7 @@ export class ChartComponent implements OnInit {
     scales: {
       x: {},
       y: {
-        min: 10
+        min: 0
       }
     },
     plugins: {
@@ -27,42 +28,65 @@ export class ChartComponent implements OnInit {
       }
     }
   };
-  public barChartType: ChartType = 'bar';
 
+  barChartType: ChartType = 'bar';
 
- 
-  public barChartData: ChartData<'bar'> = {
-    labels: [ 'JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ' ],
-    datasets: [
-      { data: [ 66, 25, 50, 100, 123, 102, 76, 99, 53, 42, 87, 45 ], label: 'Locações' },
-    ]
+  barChartData: ChartData<'bar'> = {
+    labels: [],
+    datasets: []
   };
 
-  // events
-  public chartClicked({ event, active }: { event?: ChartEvent, active?: {}[] }): void {
-    console.log(event, active);
-  }
-
-  public chartHovered({ event, active }: { event?: ChartEvent, active?: {}[] }): void {
-    console.log(event, active);
-  }
-
-  public randomize(): void {
-    // Only Change 3 values
-    this.barChartData.datasets[0].data = [
-      Math.round(Math.random() * 100),
-      59,
-      80,
-      Math.round(Math.random() * 100),
-      56,
-      Math.round(Math.random() * 100),
-      40 ];
-
-    this.chart?.update();
-  }
-
   ngOnInit(): void {
-      
+      this.barChartData = {
+        labels: [ 'JAN', 'FEV', 'MAR', 'ABR', 'MAI', 'JUN', 'JUL', 'AGO', 'SET', 'OUT', 'NOV', 'DEZ' ],
+        datasets: [
+          { data: [], label: 'Locações' },
+        ]
+      }; 
+      let contador = 0;
+      for (let item of this.data) {
+        if(item.date.includes('/01/')) {
+          contador++;
+          this.barChartData.datasets[0].data[0] = contador;
+        }
+        // if(item.date.includes('/02/')) {
+        //   contador++
+        //   this.barChartData.datasets[0].data[1] = contador;
+        // }
+        // if(item.date.includes('/03/')) {
+        //   contador++
+        //   this.barChartData.datasets[0].data[2] = contador;
+        // }
+        // if(item.date.includes('/04/')) {
+        //   contador++
+        //   this.barChartData.datasets[0].data[3] = contador;
+        // }
+        // if(item.date.includes('/05/')) {
+        //   this.barChartData.datasets[0].data[4] = this.data.length;
+        // }
+        // if(item.date.includes('/06/')) {
+        //   this.barChartData.datasets[0].data[5] = this.data.length;
+        // }
+        // if(item.date.includes('/07/')) {
+        //   this.barChartData.datasets[0].data[6] = this.data.length;
+        // }
+        // if(item.date.includes('/08/')) {
+        //   this.barChartData.datasets[0].data[7] = this.data.length;
+        // }
+        // if(item.date.includes('/09/')) {
+        //   this.barChartData.datasets[0].data[8] = this.data.length;
+        // }
+        // if(item.date.includes('/10/')) {
+        //   this.barChartData.datasets[0].data[9] = this.data.length;
+        // }
+        // if(item.date.includes('/11/')) {
+        //   this.barChartData.datasets[0].data[10] = this.data.length;
+        // }
+        // if(item.date.includes('/12/')) {
+        //   this.barChartData.datasets[0].data[11] = this.data.length;
+        // }
+      }
+
   }
 
 }

@@ -1,5 +1,5 @@
 <app-menu selected="movimentation"></app-menu>
-<div class="home container">
+<div class="home container" *ngIf="showHtml">
     <div class="dashboard row">
         <div class="col-12">
             <div class="title">
@@ -8,7 +8,7 @@
             <div>
                 <mat-card>
                     <span>Número de livros locados</span>
-                    <app-chart></app-chart>
+                    <app-chart [data]="movimentation"></app-chart>
                 </mat-card>
             </div>
         </div>
@@ -24,7 +24,7 @@
             </div>
             <div class="col-6" style="margin-top: 6.7rem;">
                 <mat-card>
-                    <app-table></app-table>
+                    <app-table [dataSource]="inventary"></app-table>
                 </mat-card>
             </div>
         </div>
