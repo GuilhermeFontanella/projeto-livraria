@@ -22,8 +22,6 @@ export class InventaryComponent implements OnInit {
   returnBooksStored() {
     this.inventaryService.getBooks().subscribe((resp: any) => {
       this.inventary = resp;
-      console.log(this.inventary)
     })
   }
-
 }

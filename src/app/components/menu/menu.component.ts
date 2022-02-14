@@ -10,12 +10,9 @@ export class MenuComponent implements OnInit {
 
   constructor(
     private router: Router,
-  
   ) { }
 
-  ngOnInit(): void {
-    console.log(this.router.url)
-  }
+  ngOnInit(): void { }
 
   logout() {
     this.router.navigateByUrl('/login');

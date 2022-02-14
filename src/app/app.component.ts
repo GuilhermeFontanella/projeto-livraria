@@ -8,16 +8,5 @@ import { Component, OnInit } from '@angular/core';
 export class AppComponent implements OnInit {
   title = 'livraria';
 
-  token: boolean = false;
-
-  ngOnInit(): void {
-    this.changeToken();
-  }
-
-  changeToken(event?: any) {
-    console.log(event);
-    
-    this.token = event
-  }
-
+  ngOnInit(): void { }
 }

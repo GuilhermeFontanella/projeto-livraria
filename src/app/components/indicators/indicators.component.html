@@ -1,16 +1,9 @@
 <div>
-    <div class="chart">
+    <div class="chart" id="chart">
       <canvas baseChart
-              [data]="pieChartData"
-              [type]="pieChartType"
-              [options]="pieChartOptions">
+      [data]="pieChartData"
+      [type]="pieChartType"
+      [options]="pieChartOptions">
       </canvas>
     </div>
-    <div style="margin-top: 20px;">
-      <ul>
-        <li>Romance: 200</li>
-        <li>Ficção: 500</li>
-        <li>História: 100</li>
-      </ul>
-    </div>
-  </div>
+</div>

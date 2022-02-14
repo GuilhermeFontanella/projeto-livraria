@@ -19,7 +19,11 @@ export class LoginComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.createForm();
+    if (localStorage.getItem('user')) {
+      this.router.navigateByUrl('/');
+    } else {
+      this.createForm();
+    }
   }
 
   createForm() {

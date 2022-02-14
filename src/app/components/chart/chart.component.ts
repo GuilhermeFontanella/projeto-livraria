@@ -15,7 +15,6 @@ export class ChartComponent implements OnInit {
 
   public barChartOptions: ChartConfiguration['options']= {
     responsive: true,
-    // We use these empty structures as placeholders for dynamic theming.
     scales: {
       x: {},
       y: {
@@ -56,6 +55,7 @@ export class ChartComponent implements OnInit {
       let contadorOut = 0;
       let contadorNov = 0;
       let contadorDez = 0;
+
       for (let item of this.data) {
         if(item.date.includes('/01/')) {
           contadorJan++;
@@ -107,7 +107,4 @@ export class ChartComponent implements OnInit {
         }
       }
   }
-
-
-
 }

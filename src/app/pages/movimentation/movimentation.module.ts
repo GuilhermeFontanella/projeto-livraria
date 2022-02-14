@@ -1,3 +1,4 @@
+import { MatButtonModule } from '@angular/material/button';
 import { FooterModule } from './../../components/footer/footer.module';
 import { MenuModule } from '../../components/menu/menu.module';
 import { NgModule } from '@angular/core';
@@ -24,7 +25,8 @@ import { MovimentationRoutingModule } from './movimentation-routing.module';
     TableModule,
     MovimentationRoutingModule,
     MenuModule,
-    FooterModule
+    FooterModule,
+    MatButtonModule
   ]
 })
 export class MovimentationModule { }

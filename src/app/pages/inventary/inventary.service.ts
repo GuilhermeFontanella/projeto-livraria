@@ -14,7 +14,16 @@ export class InventaryService {
     private httpClient: HttpClient
   ) { }
 
-  getBooks(): Observable<Book[]> {
-    return this.httpClient.get<Book[]>(this.url);
+  getBooks(params?: string | null): Observable<Book[]> {
+    if(params) {
+      return this.httpClient.get<Book[]>(`${this.url}${params}`);
+    } else {
+      return this.httpClient.get<Book[]>(`${this.url}`);
+
+    }
+  }
+
+  getBooksWithId(id: number): Observable<Book> {
+    return this.httpClient.get<Book>(`${this.url}/${id}`)
   }
 }

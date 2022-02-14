@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { InventaryService } from './../inventary/inventary.service';
 import { MovimentationService } from './movimentation.service';
 import { Component, OnInit } from '@angular/core';
@@ -12,21 +13,30 @@ export class MovimentationComponent implements OnInit {
   movimentation: any[] = [];
   inventary: any[] = [];
   showHtml: boolean = false;
+  teste: boolean = false;
 
   constructor(
     private movimentationService: MovimentationService,
-    private inventaryService: InventaryService
+    private inventaryService: InventaryService,
+    private router: Router
   ) { }
 
   ngOnInit(): void {
-    this.getMovimentarion();
-    this.getInventary();
+    console.log("iniciou")
+    if(localStorage.getItem('user')) {
+      this.getMovimentarion();
+      this.getInventary(); 
+    } else {
+      this.router.navigateByUrl('/login');
+    }
+
+       
   }
 
   getMovimentarion() {
     this.movimentationService.getMovimentation().subscribe((resp: any) => {
       this.movimentation = resp;
-      this.showHtml = true;      
+      this.showHtml = true;     
     })
   }
 
@@ -35,5 +45,4 @@ export class MovimentationComponent implements OnInit {
       this.inventary = resp;
     })
   }
-
 }
