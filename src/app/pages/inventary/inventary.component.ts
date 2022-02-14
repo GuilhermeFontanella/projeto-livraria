@@ -1,4 +1,6 @@
+import { InventaryService } from './inventary.service';
 import { Component, OnInit } from '@angular/core';
+import { Book } from 'src/app/models/book.model';
 
 @Component({
   selector: 'app-inventary',
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InventaryComponent implements OnInit {
 
-  constructor() { }
+  inventary: Book[] = [];
+
+  constructor(
+    private inventaryService: InventaryService
+  ) { }
 
   ngOnInit(): void {
+    this.returnBooksStored();
+  }
+
+  returnBooksStored() {
+    this.inventaryService.getBooks().subscribe((resp: any) => {
+      this.inventary = resp;
+      console.log(this.inventary)
+    })
   }
 
 }

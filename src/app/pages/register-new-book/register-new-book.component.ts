@@ -42,7 +42,7 @@ export class RegisterNewBookComponent implements OnInit {
     let newBook: Book = this.form.value;
     let amount = this.form.get('amount')?.value;
 
-    for(let index = 0; index <= amount; index++) {
+    for(let index = 1; index <= amount; index++) {
       this.registerNewBookService.registerNewBook(newBook).subscribe((resp: any) => {
         this.registerNewBookService.showMessage('Livro cadastrado com sucesso!');
         setTimeout(() => {

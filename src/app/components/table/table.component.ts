@@ -9,9 +9,9 @@ import { MatTableDataSource } from '@angular/material/table';
 })
 export class TableComponent implements AfterViewInit {
   @Input() pageOptions: any[] = [5, 10, 20];
+  @Input() dataSource: any;
 
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
-  dataSource = new MatTableDataSource<PeriodicElement>(ELEMENT_DATA);
+  displayedColumns: string[] = ['id', 'title', 'author', 'publishingCompany', 'gender'];
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
 

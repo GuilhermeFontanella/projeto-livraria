@@ -5,7 +5,11 @@
             <div class="title">
                <span class="h1">Inventário</span>
                <mat-card style="margin-top: 20px">
-                    <app-table [pageOptions]="[10, 20, 30]"></app-table>
+                    <app-table 
+                    [pageOptions]="[10, 20, 30]"
+                    [dataSource]="inventary"
+                    >
+                    </app-table>
                </mat-card> 
             </div>
         </div>
