@@ -1,0 +1,207 @@
+{
+  "usuarios": [
+    {
+      "id": 0,
+      "name": "Guilherme",
+      "lastName": "Fontanella",
+      "user": "gui.jmf@gmail.com",
+      "password": "1234",
+      "level": "2"
+    },
+    {
+      "name": "Alane ",
+      "lastName": "Canela",
+      "user": "alane@gmail.com",
+      "password": "1234",
+      "level": "1",
+      "id": 1
+    }
+  ],
+  "books": [
+    {
+      "bookName": "Teste",
+      "author": "teste",
+      "gender": "Ação",
+      "publishingCompany": "teste",
+      "edition": 3,
+      "amount": 2,
+      "id": 1
+    },
+    {
+      "bookName": "Teste",
+      "author": "teste",
+      "gender": "Ação",
+      "publishingCompany": "teste",
+      "edition": 3,
+      "amount": 2,
+      "id": 2
+    },
+    {
+      "bookName": "Teste",
+      "author": "teste",
+      "gender": "Ação",
+      "publishingCompany": "teste",
+      "edition": 3,
+      "amount": 2,
+      "id": 3
+    },
+    {
+      "bookName": "novo teste",
+      "author": "teste",
+      "gender": "Fantasia",
+      "publishingCompany": "blabla",
+      "edition": 123,
+      "amount": 1,
+      "id": 4
+    }
+  ],
+  "movement": [
+    {
+      "movement": "1",
+      "idBook": 1,
+      "date": "14/02/2022",
+      "deadline": "2022-02-23",
+      "nameWhoTookBook": "alane",
+      "telephone": "9999999999",
+      "id": 1
+    },
+    {
+      "movement": "1",
+      "idBook": 1,
+      "date": "14/02/2022",
+      "deadline": "2022-02-23",
+      "nameWhoTookBook": "slknxlknz",
+      "telephone": "9999999999",
+      "id": 2
+    },
+    {
+      "movement": "1",
+      "idBook": 2,
+      "date": "14/02/2022",
+      "deadline": "2022-02-23",
+      "nameWhoTookBook": "slknxlknz",
+      "telephone": "9999999999",
+      "id": 3
+    },
+    {
+      "movement": "1",
+      "idBook": 3,
+      "date": "14/02/2022",
+      "deadline": "2022-02-16",
+      "nameWhoTookBook": "kkkkkkkkkkk",
+      "telephone": "8888888888",
+      "id": 8
+    },
+    {
+      "movement": "1",
+      "idBook": 3,
+      "date": "14/02/2022",
+      "deadline": "2022-02-17",
+      "nameWhoTookBook": "kkkkkkkk",
+      "telephone": "9999999999",
+      "id": 9
+    },
+    {
+      "movement": "1",
+      "idBook": 1,
+      "date": "14/02/2022",
+      "deadline": "2022-02-23",
+      "nameWhoTookBook": "mmmmm",
+      "telephone": "8888888888",
+      "id": 10
+    },
+    {
+      "movement": "1",
+      "idBook": 1,
+      "date": "14/03/2022",
+      "deadline": "2022-03-23",
+      "nameWhoTookBook": "alane",
+      "telephone": "9999999999",
+      "id": 1
+    },
+    {
+      "movement": "1",
+      "idBook": 1,
+      "date": "14/03/2022",
+      "deadline": "2022-03-23",
+      "nameWhoTookBook": "slknxlknz",
+      "telephone": "9999999999",
+      "id": 2
+    },
+    {
+      "movement": "1",
+      "idBook": 2,
+      "date": "14/03/2022",
+      "deadline": "2022-03-23",
+      "nameWhoTookBook": "slknxlknz",
+      "telephone": "9999999999",
+      "id": 3
+    },
+    {
+      "movement": "1",
+      "idBook": 3,
+      "date": "14/05/2022",
+      "deadline": "2022-05-16",
+      "nameWhoTookBook": "kkkkkkkkkkk",
+      "telephone": "8888888888",
+      "id": 8
+    },
+    {
+      "movement": "1",
+      "idBook": 3,
+      "date": "14/01/2022",
+      "deadline": "2022-05-16",
+      "nameWhoTookBook": "kkkkkkkkkkk",
+      "telephone": "8888888888",
+      "id": 8
+    },
+    {
+      "movement": "1",
+      "idBook": 2,
+      "date": "14/02/2022",
+      "deadline": "2022-02-22",
+      "nameWhoTookBook": "tester",
+      "telephone": "3333333333",
+      "id": 11
+    },
+    {
+      "movement": "1",
+      "idBook": 4,
+      "date": "14/02/2022",
+      "deadline": "2022-02-28",
+      "nameWhoTookBook": "eu mesmo",
+      "telephone": "1234568800",
+      "id": 12
+    }
+  ],
+  "gender": [
+    {
+      "label": "Ação",
+      "value": 1
+    },
+    {
+      "label": "Ficção",
+      "value": 2
+    },
+    {
+      "label": "Fantasia",
+      "value": 3
+    },
+    {
+      "label": "História",
+      "value": 4
+    },
+    {
+      "label": "Romance",
+      "value": 5
+    },
+    {
+      "label": "Auto ajuda",
+      "value": 6
+    },
+    {
+      "label": "Culinário",
+      "value": 7
+    }
+  ]
+}
