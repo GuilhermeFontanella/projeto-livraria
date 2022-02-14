@@ -1,5 +1,10 @@
 # Livraria
 
+# Para rodar o back-end, entre na pasta web-api, e rode o comando json-server --watch db.json no seu prompt de comando.
+(foi utilizado o JSON Server para simular um Back-end, todos os métodos Http: POST, PUT, GET e DELETE estão disponíveis)
+# Para rodar o front, entre na pasta web-app e rode o comando ng serve no prompt de comando.
+Para acessar o sistema, crie um usuário clicando no link abaixo do botao de login, caso você nao tenha um usuário cadastrado.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.3.
 
 ## Development server
