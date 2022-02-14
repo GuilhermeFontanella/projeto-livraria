@@ -7,10 +7,10 @@
             </div>
             <div>
                 <mat-card>
-                    <form [formGroup]="form" (submit)="registrar()">
+                    <form [formGroup]="form" (submit)="register()">
                         <mat-radio-group style="display: flex; flex-direction: row; padding-left: 15px; padding-top: 15px; padding-bottom: 15px;" formControlName="movement">
-                            <mat-radio-button value="1" style="margin-right: 10px;" (click)="form.get('deadline')?.setValue(null)">Entrada</mat-radio-button>
-                            <mat-radio-button value="2" (click)="form.get('deadline')?.setValue('devolução')">Saída</mat-radio-button>
+                            <mat-radio-button value="1" style="margin-right: 10px;" (click)="form.get('deadline')?.setValue(null)">Saída</mat-radio-button>
+                            <mat-radio-button value="2" (click)="form.get('deadline')?.setValue('devolução')">Entrada</mat-radio-button>
                         </mat-radio-group>                        
                         <mat-form-field appearance="fill" class="col-12">
                             <mat-label>Id do livro:</mat-label>

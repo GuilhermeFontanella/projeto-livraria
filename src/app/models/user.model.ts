@@ -3,5 +3,6 @@ export interface User {
     lastName: string,
     user: string,
     password: string,
-    level: string
+    level: string,
+    id: number,
 }

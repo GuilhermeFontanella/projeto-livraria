@@ -5,7 +5,10 @@
 export const environment = {
   production: false,
   baseUrl: 'http://localhost:3000/',
-  urlModuloUsuarios: 'usuarios'
+  urlModuloUsuarios: 'usuarios',
+  urlModuloBooks: 'books',
+  urlMovement: 'movement',
+  urlGender: 'gender'
 };
 
 /*

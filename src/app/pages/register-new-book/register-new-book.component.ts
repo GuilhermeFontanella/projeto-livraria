@@ -1,10 +1,8 @@
+import { Book } from './../../models/book.model';
+import { RegisterNewBookService } from './register-new-book.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
-
-interface Genero {
-  label: string,
-  value: number
-}
+import { Gender } from 'src/app/models/gender.model';
 
 @Component({
   selector: 'app-register-new-book',
@@ -15,27 +13,18 @@ export class RegisterNewBookComponent implements OnInit {
   form!: FormGroup;
   isDisabled: boolean = true;
 
-  genders: Genero[] = [
-    { label: 'Ação', value: 1 },
-    { label: 'Ficção', value: 2 },
-    { label: 'Fantasia', value: 3 },
-    { label: 'História', value: 4 },
-    { label: 'Romance', value: 5 },
-    { label: 'Auto ajuda', value: 6 },
-    { label: 'Culinário', value: 7 },
-  ];
-
-  minDate!: Date;
-  maxDate!: Date;
+  genders: Gender[] = [];
 
   currentDate = new Date().toLocaleDateString();
 
   constructor(
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private registerNewBookService: RegisterNewBookService
   ) { }
 
   ngOnInit(): void {
     this.createForm();
+    this.populateGenderList();
   }
 
   createForm() {
@@ -49,8 +38,26 @@ export class RegisterNewBookComponent implements OnInit {
     });
   }
 
-  registrar() {
-    console.log(this.form.value);
+  register() {
+    let newBook: Book = this.form.value;
+    let amount = this.form.get('amount')?.value;
+
+    for(let index = 0; index <= amount; index++) {
+      this.registerNewBookService.registerNewBook(newBook).subscribe((resp: any) => {
+        this.registerNewBookService.showMessage('Livro cadastrado com sucesso!');
+        setTimeout(() => {
+          window.location.reload();
+        }, 1000)
+      }, (error) => {
+        this.registerNewBookService.showMessage('Ocorreu um erro ao cadastrar um novo livro.');
+      });
+    }
+  }
+
+  populateGenderList() {
+    this.registerNewBookService.getGender().subscribe((resp: any) => {
+      this.genders = resp;
+    })
   }
 
 }

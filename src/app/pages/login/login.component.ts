@@ -2,9 +2,6 @@ import { LoginService } from './login.service';
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { User } from 'src/app/models/user.model';
-import { from } from 'rxjs';
-import { filter } from 'rxjs/operators';
 
 @Component({
   selector: 'app-login',
