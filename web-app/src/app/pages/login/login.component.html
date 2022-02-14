@@ -1,0 +1,27 @@
+<div>
+    <div class="background">
+        <div class="card-login">
+            <mat-card [class.mat-elevation-z8]="true">
+                <label class="h3">Login</label>
+                <form [formGroup]="form" (submit)="login()">
+                    <div class="input">
+                        <mat-form-field appearance="fill">
+                            <mat-label>E-mail</mat-label>
+                            <input type="email" matInput formControlName="user" placeholder="yourEmail@email.com">
+                            <mat-error *ngIf="form.get('user')?.touched && form.get('user')?.invalid">E-mail inválido</mat-error>
+                        </mat-form-field>
+                        <mat-form-field appearance="fill">
+                            <mat-label>Senha</mat-label>
+                            <input type="password" matInput formControlName="password" placeholder="" maxlength="20">
+                            <mat-error *ngIf="form.get('password')?.touched && form.get('password')?.invalid">Campo obrigatório</mat-error>
+                        </mat-form-field>
+                    </div>
+                    <div class="input-button">
+                        <button type="submit" mat-raised-button color="primary" [disabled]="form.invalid">Login</button>
+                    </div>
+                </form>
+                <button id="botao-cadastro" mat-button (click)="navigate()">Não tem cadastro? Cadastre-se!</button>
+            </mat-card>
+        </div>
+    </div>
+</div>
